@@ -61,7 +61,6 @@ const CustomForm = ({ entityType }: { entityType: "student" | "staff" }) => {
   const { mutate: onSubmit, isPending } = useMutation({
     mutationFn: async () => {
       const payload: LoginType = form.getValues();
-      console.log("💪", entityType);
       axios.post(`${BASE_URL}/auth/login/${entityType}`, payload, {
         withCredentials: true,
       });
@@ -91,12 +90,12 @@ const CustomForm = ({ entityType }: { entityType: "student" | "staff" }) => {
     },
   });
   return (
-    <div className="bg-background border-border h-full space-y-8 rounded-md border p-5 pb-8">
+    <div className="h-full space-y-8 rounded-md border border-border bg-background p-5 pb-8">
       <div className="space-y-3 text-center">
-        <h1 className="text-primary text-xl font-bold leading-tight tracking-tight md:text-2xl">
+        <h1 className="text-xl font-bold leading-tight tracking-tight text-primary md:text-2xl">
           Sign in
         </h1>
-        <p className="text-secondary text-sm">
+        <p className="text-sm text-secondary">
           Enter your <span className="font-bold uppercase">{entityType}</span>{" "}
           credentials below to login
         </p>
@@ -143,11 +142,11 @@ const CustomForm = ({ entityType }: { entityType: "student" | "staff" }) => {
           </Button>
         </form>
       </Form>
-      <p className="text-secondary text-center text-sm">
+      <p className="text-center text-sm text-secondary">
         Is your school not registered?
         <Link
           href="/sign-up"
-          className="hover:text-primary px-2 underline underline-offset-2 transition-colors"
+          className="px-2 underline underline-offset-2 transition-colors hover:text-primary"
         >
           Sign up
         </Link>

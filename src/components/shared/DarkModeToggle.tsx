@@ -10,7 +10,6 @@ import { PopoverTrigger } from "@radix-ui/react-popover";
 
 export function DarkModeToggle() {
   const { setTheme, theme } = useTheme();
-  console.log(theme);
 
   return (
     <Popover>
