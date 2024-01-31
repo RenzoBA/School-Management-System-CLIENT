@@ -9,6 +9,7 @@ import {
   LibraryIcon,
   PcCase,
   Users,
+  Users2,
 } from "lucide-react";
 
 export const adminLinks: SidebarLinkProps[] = [
@@ -17,8 +18,13 @@ export const adminLinks: SidebarLinkProps[] = [
     children: [
       {
         icon: Users,
-        title: "Staff",
-        path: "/admin/staff",
+        title: "Teachers",
+        path: "/admin/teachers",
+      },
+      {
+        icon: Users2,
+        title: "Accountants",
+        path: "/admin/accountants",
       },
       {
         icon: GraduationCap,
