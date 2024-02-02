@@ -11,10 +11,10 @@ const AdminSidebar = () => {
   const pathName = usePathname();
 
   return (
-    <div className="bg-background w-60 space-y-8 rounded-lg px-2 py-6 shadow">
+    <div className="w-60 space-y-8 rounded-lg bg-background px-2 py-6 shadow">
       <div className="flex flex-row items-center justify-center gap-1">
         <Image src="/assets/logo.svg" alt="logo" width={40} height={40} />
-        <h1 className="text-tertiary font-mono text-2xl font-black uppercase tracking-wider">
+        <h1 className="font-mono text-2xl font-black uppercase tracking-wider text-tertiary">
           Quantum
         </h1>
       </div>
@@ -22,7 +22,7 @@ const AdminSidebar = () => {
         <Link
           href="/admin/dashboard"
           className={cn(
-            "hover:bg-background-strong flex items-center gap-4 rounded px-4 py-2 font-medium transition-all hover:text-[#8b5cf6]",
+            "flex items-center gap-4 rounded px-4 py-2 font-medium transition-all hover:bg-background-strong hover:text-[#8b5cf6]",
             {
               "bg-background-strong text-[#8b5cf6]":
                 pathName === "/admin/dashboard",
@@ -35,7 +35,7 @@ const AdminSidebar = () => {
         <div className="space-y-4">
           {adminLinks.map((group, i) => (
             <ul key={i} className="space-y-2">
-              <p className="text-secondary text-[0.7rem] uppercase tracking-wider">
+              <p className="text-[0.7rem] uppercase tracking-wider text-secondary">
                 {group.title}
               </p>
               <div className="space-y-2">
@@ -44,7 +44,7 @@ const AdminSidebar = () => {
                     <Link
                       href={link.path}
                       className={cn(
-                        "hover:bg-background-strong flex items-center gap-4 rounded px-4 py-2 font-medium transition-all hover:text-[#8b5cf6]",
+                        "flex items-center gap-4 rounded px-4 py-2 font-medium transition-all hover:bg-background-strong hover:text-[#8b5cf6]",
                         {
                           "bg-background-strong text-[#8b5cf6]":
                             pathName === link.path,
