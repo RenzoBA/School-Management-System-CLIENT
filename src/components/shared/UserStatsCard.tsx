@@ -5,40 +5,54 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../ui/tooltip";
-import LineChart from "./LineChart";
+import LineChart from "./charts/LineChart";
+import { TrendingUp } from "lucide-react";
+import Link from "next/link";
 
 interface UserStatsCardProps {
-  users: {
+  user: {
     type: string;
     totalUsers: number;
     chartData: {
       labels: string[];
       data: number[];
+      colors: {
+        base: string;
+        soft: string;
+      };
     };
     percentage: string;
   };
 }
 
-const UserStatsCard: FC<UserStatsCardProps> = ({ users }) => {
+const UserStatsCard: FC<UserStatsCardProps> = ({ user }) => {
   return (
-    <div className="bg-background w-52 rounded-lg px-4 py-3 shadow">
-      <label className="text-secondary text-[0.7rem]">{users.type}</label>
-      <div className="flex h-16 flex-row items-start justify-between">
-        <p className="text-2xl font-semibold">{users.totalUsers}</p>
-        <LineChart chartData={users.chartData} />
+    <div className="w-60 rounded-lg bg-background px-4 py-3 shadow">
+      <div className="flex flex-row items-center justify-between">
+        <p className="font-bold capitalize">{user.type}</p>
+        <Link href={`/admin/${user.type}`} className="text-xs text-tertiary">
+          More Details
+        </Link>
       </div>
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <p className="text-tertiary flex w-fit cursor-pointer flex-row gap-2 text-xs">
-              {users.percentage} %
-            </p>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Annual growth.</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+      <div className="flex flex-col">
+        <div className="-mb-2 flex flex-col items-start justify-start">
+          <p className="text-2xl font-black text-tertiary">{user.totalUsers}</p>
+          <TooltipProvider delayDuration={100}>
+            <Tooltip>
+              <TooltipTrigger asChild className="z-10">
+                <span className="flex cursor-pointer flex-row items-center gap-1 text-xs font-semibold">
+                  <TrendingUp size={14} />
+                  {user.percentage} %
+                </span>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Annual growth</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
+        <LineChart chartData={user.chartData} />
+      </div>
     </div>
   );
 };

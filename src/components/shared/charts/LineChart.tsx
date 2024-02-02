@@ -17,7 +17,10 @@ interface LineChartProps {
   chartData: {
     labels: string[];
     data: number[];
-    color: string;
+    colors: {
+      base: string;
+      soft: string;
+    };
   };
 }
 
@@ -68,7 +71,9 @@ const LineChart: FC<LineChartProps> = ({ chartData }) => {
     datasets: [
       {
         data: chartData.data,
-        borderColor: chartData.color,
+        borderColor: chartData.colors.soft,
+        hoverBorderColor: chartData.colors.base,
+        backgroundColor: chartData.colors.soft,
         tension: 0.4,
         pointRadius: 2,
       },
