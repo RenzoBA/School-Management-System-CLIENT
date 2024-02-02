@@ -9,7 +9,7 @@ interface HeaderProps {}
 
 const Header: FC<HeaderProps> = ({}) => {
   return (
-    <header className="flex w-full flex-row items-start justify-between px-4 py-3">
+    <header className="absolute flex w-full flex-row items-start justify-between">
       <CurrentPath />
       <div className="flex flex-row items-center gap-4">
         <div>

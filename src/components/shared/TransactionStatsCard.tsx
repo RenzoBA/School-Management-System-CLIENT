@@ -31,7 +31,7 @@ const transactions = {
 
 const TransactionStatsCard: FC = () => {
   return (
-    <div className="w-[550px] rounded-lg bg-background px-4 py-3 shadow">
+    <div className="h-60 w-full rounded-lg bg-background px-4 py-3 shadow">
       <div className="flex flex-row items-center justify-between">
         <p className="font-bold capitalize">Transactions Summary</p>
         <Link href="/admin/transactions" className="text-xs text-tertiary">

@@ -17,7 +17,7 @@ const careers = {
 
 const CareerStatsCard: FC = () => {
   return (
-    <div className="w-72 space-y-2 rounded-lg bg-background px-4 py-3 shadow">
+    <div className="space-y-2 rounded-lg bg-background px-4 py-3 shadow">
       <div className="flex flex-row items-center justify-between">
         <p className="font-bold capitalize">Careers Summary</p>
         <Link href="/admin/careers" className="text-xs text-tertiary">
