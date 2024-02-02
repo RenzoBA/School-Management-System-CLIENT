@@ -22,7 +22,7 @@ import { useRouter } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
 
-const LoginForm: FC = ({}) => {
+const LoginForm: FC<{ baseURL: string }> = ({ baseURL }) => {
   return (
     <div className="mx-auto flex w-full flex-col items-center justify-center space-y-6 rounded-lg sm:w-[400px] sm:max-w-md md:mt-0 xl:p-0">
       <div className="space-y-6 p-6 sm:p-8">
@@ -32,10 +32,10 @@ const LoginForm: FC = ({}) => {
             <TabsTrigger value="staff">STAFF</TabsTrigger>
           </TabsList>
           <TabsContent value="student">
-            <CustomForm entityType="student" />
+            <CustomForm entityType="student" baseURL={baseURL} />
           </TabsContent>
           <TabsContent value="staff">
-            <CustomForm entityType="staff" />
+            <CustomForm entityType="staff" baseURL={baseURL} />
           </TabsContent>
         </Tabs>
       </div>
@@ -43,9 +43,13 @@ const LoginForm: FC = ({}) => {
   );
 };
 
-const CustomForm = ({ entityType }: { entityType: "student" | "staff" }) => {
-  const BASE_URL = process.env.BASE_URL ?? "http://localhost:3001";
-
+const CustomForm = ({
+  entityType,
+  baseURL,
+}: {
+  entityType: "student" | "staff";
+  baseURL: string;
+}) => {
   const router = useRouter();
 
   const { toast } = useToast();
@@ -61,7 +65,7 @@ const CustomForm = ({ entityType }: { entityType: "student" | "staff" }) => {
   const { mutate: onSubmit, isPending } = useMutation({
     mutationFn: async () => {
       const payload: LoginType = form.getValues();
-      axios.post(`${BASE_URL}/auth/login/${entityType}`, payload, {
+      axios.post(`${baseURL}/auth/login/${entityType}`, payload, {
         withCredentials: true,
       });
     },
@@ -86,7 +90,7 @@ const CustomForm = ({ entityType }: { entityType: "student" | "staff" }) => {
         title: "Welcome",
         description: "Login Successfully",
       });
-      router.push("/dashboard");
+      router.push("/admin/dashboard");
     },
   });
   return (

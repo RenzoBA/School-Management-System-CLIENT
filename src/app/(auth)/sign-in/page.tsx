@@ -3,9 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const page = () => {
+  const BASE_URL = process.env.BASE_URL ?? "http://localhost:3001";
+
   return (
-    <div className="bg-background-strong flex h-screen flex-row">
-      <div className="border-border relative z-10 hidden h-full w-[55%] border-r p-10 text-white lg:flex lg:flex-col">
+    <div className="flex h-screen flex-row bg-background-strong">
+      <div className="relative z-10 hidden h-full w-[55%] border-r border-border p-10 text-white lg:flex lg:flex-col">
         <Image
           src="/images/students.jpg"
           alt="students-teachers-img"
@@ -13,8 +15,8 @@ const page = () => {
           quality={60}
           fill
         />
-        <div className="text-primary z-20 mt-auto">
-          <blockquote className="bg-background-strong space-y-2 rounded p-2 opacity-90">
+        <div className="z-20 mt-auto text-primary">
+          <blockquote className="space-y-2 rounded bg-background-strong p-2 opacity-90">
             <span className="p-2 text-lg font-light italic">
               &ldquo;Quantum has revolutionized my approach to classroom
               management. This user-friendly school management system ensures
@@ -23,7 +25,7 @@ const page = () => {
               teaching experience, making administrative tasks efficient and
               allowing me to focus more on what matters most - teaching.&rdquo;
             </span>
-            <footer className="text-tertiary text-sm font-bold">
+            <footer className="text-sm font-bold text-tertiary">
               Ms. Anderson, Teacher of The Coolest Awesome School.
             </footer>
           </blockquote>
@@ -36,7 +38,7 @@ const page = () => {
             Quantum
           </span>
         </Link>
-        <LoginForm />
+        <LoginForm baseURL={BASE_URL} />
       </div>
     </div>
   );
