@@ -1,30 +1,18 @@
-import UserStatsCard from "@/components/shared/UserStatsCard";
+import CareerStatsCard from "@/components/shared/CareerStatsCard";
+import CohortStatsCard from "@/components/shared/CohortStatsCard";
+import TransactionStatsCard from "@/components/shared/TransactionStatsCard";
+import UserStatsCardsGroup from "@/components/shared/UserStatsCardsGroup";
 
 const page = () => {
   return (
     <div>
-      <UserStatsCard
-        users={{
-          type: "students",
-          totalUsers: 893,
-          percentage: "+2.5",
-          chartData: {
-            labels: [
-              "2015",
-              "2016",
-              "2017",
-              "2018",
-              "2019",
-              "2020",
-              "2021",
-              "2022",
-              "2023",
-            ],
-            data: [90, 111, 124, 110, 156, 170, 165, 198, 190, 230],
-          },
-        }}
-      />
-      admin dashboard
+      <UserStatsCardsGroup />
+      <br />
+      <CohortStatsCard />
+      <br />
+      <TransactionStatsCard />
+      <br />
+      <CareerStatsCard />
     </div>
   );
 };
