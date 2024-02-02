@@ -1,15 +1,17 @@
 import { SidebarLinkProps } from "@/lib/types/sidebar-link";
 import {
-  Blocks,
   BookA,
   BookOpenCheck,
   BookOpenText,
-  BookText,
+  Coins,
+  Component,
   GraduationCap,
-  LibraryIcon,
-  PcCase,
+  Group,
+  LibraryBig,
+  NotebookPen,
+  Presentation,
+  School,
   Users,
-  Users2,
 } from "lucide-react";
 
 export const adminLinks: SidebarLinkProps[] = [
@@ -17,27 +19,27 @@ export const adminLinks: SidebarLinkProps[] = [
     title: "Administration",
     children: [
       {
-        icon: Users,
+        icon: GraduationCap,
         title: "Teachers",
         path: "/admin/teachers",
       },
       {
-        icon: Users2,
+        icon: Coins,
         title: "Accountants",
         path: "/admin/accountants",
       },
       {
-        icon: GraduationCap,
+        icon: Users,
         title: "Students",
         path: "/admin/students",
       },
       {
-        icon: PcCase,
+        icon: Component,
         title: "Cohorts",
         path: "/admin/cohorts",
       },
       {
-        icon: Blocks,
+        icon: Group,
         title: "Sections",
         path: "/admin/sections",
       },
@@ -47,12 +49,12 @@ export const adminLinks: SidebarLinkProps[] = [
     title: "Academics",
     children: [
       {
-        icon: LibraryIcon,
+        icon: School,
         title: "Careers",
         path: "/admin/careers",
       },
       {
-        icon: BookText,
+        icon: Presentation,
         title: "Courses",
         path: "/admin/courses",
       },
@@ -62,12 +64,12 @@ export const adminLinks: SidebarLinkProps[] = [
     title: "Evaluations",
     children: [
       {
-        icon: BookA,
+        icon: LibraryBig,
         title: "Assignments",
         path: "/admin/assignments",
       },
       {
-        icon: BookOpenCheck,
+        icon: NotebookPen,
         title: "Exam",
         path: "/admin/exam",
       },
