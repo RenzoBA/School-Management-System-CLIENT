@@ -4,12 +4,12 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 240 20% 99%;
     --foreground: 240 10% 3.9%;
     --backgroundPrimaryGradient: 300, 100%, 75%;
     --backgroundSecondaryGradient: 240, 100%, 75%;
 
-    --background-strong: 208, 93%, 95%;
+    --background-strong: 210 17% 98%;
 
     --tertiary: 258, 90%, 66%;
     --tertiary-foreground: 254, 43%, 43%;
@@ -43,12 +43,12 @@
   }
 
   .dark {
-    --background: 234, 40%, 19%;
+    --background: 226 73% 13%;
     --foreground: 0 0% 98%;
     --backgroundPrimaryGradient: 228, 100%, 10%;
     --backgroundSecondaryGradient: 234, 30.8%, 28.6%;
 
-    --background-strong: 226, 73%, 10%;
+    --background-strong: 226 73% 10%;
 
     --tertiary: 258, 90%, 66%;
     --tertiary-foreground: 254, 43%, 43%;

@@ -16,7 +16,7 @@ const page = () => {
           fill
         />
         <div className="z-20 mt-auto text-primary">
-          <blockquote className="space-y-2 rounded bg-background-strong p-2 opacity-90">
+          <blockquote className="space-y-2 rounded bg-background p-2 opacity-90">
             <span className="p-2 text-lg font-light italic">
               &ldquo;Quantum has revolutionized my approach to classroom
               management. This user-friendly school management system ensures

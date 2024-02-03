@@ -76,7 +76,7 @@ const users = [
 
 const UserStatsCardsGroup: FC = () => {
   return (
-    <div className="flex flex-row gap-5">
+    <div className="flex flex-row gap-4">
       {users.map((user, i) => (
         <UserStatsCard user={user} key={i} />
       ))}

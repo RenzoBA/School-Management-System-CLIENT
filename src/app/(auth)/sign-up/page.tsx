@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const page = () => {
   return (
-    <div className="bg-background-strong flex h-screen flex-row">
-      <div className="border-border relative z-10 hidden h-full w-[55%] border-r p-10 text-white lg:flex lg:flex-col">
+    <div className="flex h-screen flex-row bg-background-strong">
+      <div className="relative z-10 hidden h-full w-[55%] border-r border-border p-10 text-white lg:flex lg:flex-col">
         <Image
           src="/images/director-ai.jpg"
           alt="director-img"
@@ -13,15 +13,15 @@ const page = () => {
           quality={60}
           fill
         />
-        <div className="text-primary z-20 mt-auto">
-          <blockquote className="bg-background-strong space-y-2 rounded p-2 opacity-90">
+        <div className="z-20 mt-auto text-primary">
+          <blockquote className="space-y-2 rounded bg-background p-2 opacity-90">
             <span className="p-2 text-lg font-light italic">
               &ldquo;As a school director, implementing the Quantum school
               management app has revolutionized the way we operate. The seamless
               integration of Quantum into our daily processes has significantly
               improved efficiency and communication across the board&rdquo;
             </span>
-            <footer className="text-tertiary text-sm font-bold">
+            <footer className="text-sm font-bold text-tertiary">
               Jonathan Mitchell, Director of The Coolest Awesome School.
             </footer>
           </blockquote>

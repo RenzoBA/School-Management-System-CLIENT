@@ -27,7 +27,7 @@ const LoginForm: FC<{ baseURL: string }> = ({ baseURL }) => {
     <div className="mx-auto flex w-full flex-col items-center justify-center space-y-6 rounded-lg sm:w-[400px] sm:max-w-md md:mt-0 xl:p-0">
       <div className="space-y-6 p-6 sm:p-8">
         <Tabs defaultValue="student" className="w-full sm:w-[400px]">
-          <TabsList className="grid w-full grid-cols-2">
+          <TabsList className="grid h-14 w-full grid-cols-2">
             <TabsTrigger value="student">STUDENT</TabsTrigger>
             <TabsTrigger value="staff">STAFF</TabsTrigger>
           </TabsList>
@@ -99,9 +99,9 @@ const CustomForm = ({
         <h1 className="text-xl font-bold leading-tight tracking-tight text-primary md:text-2xl">
           Sign in
         </h1>
-        <p className="text-sm text-secondary">
-          Enter your <span className="font-bold uppercase">{entityType}</span>{" "}
-          credentials below to login
+        <p className="text-sm">
+          Enter your <span className="uppercase">{entityType}</span> credentials
+          below to login
         </p>
       </div>
       <Form {...form}>
@@ -129,7 +129,7 @@ const CustomForm = ({
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input placeholder="12345" type="password" {...field} />
+                  <Input placeholder="*****" type="password" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -146,7 +146,7 @@ const CustomForm = ({
           </Button>
         </form>
       </Form>
-      <p className="text-center text-sm text-secondary">
+      <p className="text-center text-xs text-secondary">
         Is your school not registered?
         <Link
           href="/sign-up"

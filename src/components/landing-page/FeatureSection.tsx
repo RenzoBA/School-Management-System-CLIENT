@@ -35,11 +35,11 @@ const FeatureSection = () => {
 const Feature = ({ feature }: { feature: FeatureProps }) => {
   return (
     <div className="flex max-w-md flex-col items-center gap-2 sm:mx-auto sm:text-center">
-      <div className="bg-background-strong rounded-full p-4 shadow">
+      <div className="rounded-full bg-background p-4 shadow">
         <Image src={feature.image} alt={feature.title} width={50} height={50} />
       </div>
       <div>
-        <p className="text-tertiary font-sans text-xs font-bold">
+        <p className="font-sans text-xs font-bold text-tertiary">
           {feature.bulletin}
         </p>
         <h3 className="mb-3 font-sans text-xl font-bold leading-5">

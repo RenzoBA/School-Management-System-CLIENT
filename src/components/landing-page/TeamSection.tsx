@@ -54,7 +54,7 @@ const TeamMember = ({ member }: { member: MemberProps }) => {
         <p className="text-lg font-bold">
           {member.fullName} <span className="ml-1">{member.country}</span>
         </p>
-        <p className="text-tertiary mb-4 text-xs">{member.role}</p>
+        <p className="mb-4 text-xs text-tertiary">{member.role}</p>
         <p className="mb-4 text-sm leading-relaxed tracking-wide">
           {member.about}
         </p>
@@ -66,7 +66,7 @@ const TeamMember = ({ member }: { member: MemberProps }) => {
                   <Link
                     target="_blank"
                     href={link.url}
-                    className="bg-background hover:bg-tertiary group rounded-full p-2 transition-colors"
+                    className="group rounded-full bg-transparent p-2 transition-colors hover:bg-tertiary"
                   >
                     <span className="sr-only">{link.name}</span>
                     <link.logo

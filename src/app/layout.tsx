@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className={cn(
           inter.className,
-          "min-h-screen antialiased scrollbar-thin scrollbar-thumb-background-strong scrollbar-thumb-rounded"
+          "min-h-screen bg-background-strong antialiased scrollbar-thin scrollbar-thumb-background-strong scrollbar-thumb-rounded"
         )}
       >
         <CustomQueryProvider>
