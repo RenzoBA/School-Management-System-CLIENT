@@ -28,7 +28,7 @@ interface UserStatsCardProps {
 
 const UserStatsCard: FC<UserStatsCardProps> = ({ user }) => {
   return (
-    <div className="w-60 rounded-lg bg-background px-4 py-3 shadow">
+    <div className="rounded-lg bg-background px-4 py-3 shadow">
       <div className="flex flex-row items-center justify-between">
         <p className="font-bold capitalize">{user.type}</p>
         <Link href={`/admin/${user.type}`} className="text-xs text-tertiary">

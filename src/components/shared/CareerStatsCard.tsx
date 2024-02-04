@@ -17,25 +17,30 @@ const careers = {
 
 const CareerStatsCard: FC = () => {
   return (
-    <div className="space-y-2 rounded-lg bg-background px-4 py-3 shadow">
+    <div className="w-full space-y-2 rounded-lg bg-background px-4 py-3 shadow">
       <div className="flex flex-row items-center justify-between">
         <p className="font-bold capitalize">Careers Summary</p>
         <Link href="/admin/careers" className="text-xs text-tertiary">
           More Details
         </Link>
       </div>
-      <DoughnutChart chartData={careers.chartData} />
-      <div className="space-y-2">
-        <p className="text-[0.7rem] text-[#9699A6]">Top 3 careers</p>
-        <div className="flex flex-row items-center justify-between">
-          {careers.topCareers.map((career, i) => (
-            <div key={i} className="flex flex-col items-center justify-center">
-              <p className="text-xs font-semibold">{career.careerName}</p>
-              <span className="text-2xl font-black text-tertiary">
-                {career.studentsNumber}
-              </span>
-            </div>
-          ))}
+      <div className="flex flex-row">
+        <DoughnutChart chartData={careers.chartData} />
+        <div className="w-32 space-y-2 text-center">
+          <p className="text-[0.7rem] text-[#9699A6]">Top 3:</p>
+          <div className="flex flex-col items-center justify-between">
+            {careers.topCareers.map((career, i) => (
+              <div
+                key={i}
+                className="flex flex-col items-center justify-center"
+              >
+                <p className="text-xs font-semibold">{career.careerName}</p>
+                <span className="text-xl font-black text-tertiary">
+                  {career.studentsNumber}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

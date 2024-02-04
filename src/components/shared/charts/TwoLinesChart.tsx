@@ -36,8 +36,7 @@ ChartJS.register(
 const TwoLinesChart: FC<TwoLinesChartProps> = ({ chartData }) => {
   const options: ChartOptions<"line"> = {
     responsive: true,
-    maintainAspectRatio: true,
-    aspectRatio: 3.529,
+    maintainAspectRatio: false,
     color: "#9699A6",
     scales: {
       x: {
@@ -100,7 +99,11 @@ const TwoLinesChart: FC<TwoLinesChartProps> = ({ chartData }) => {
     })),
   };
 
-  return <Line options={options} data={data} className="p-2" />;
+  return (
+    <div className="relative h-44 w-full">
+      <Line options={options} data={data} />
+    </div>
+  );
 };
 
 export default TwoLinesChart;

@@ -50,7 +50,11 @@ const DoughnutChart: FC<DoughnutChartProps> = ({ chartData }) => {
     ],
   };
 
-  return <Doughnut options={options} data={data} className="p-4" />;
+  return (
+    <div className="relative h-40 w-full">
+      <Doughnut options={options} data={data} />
+    </div>
+  );
 };
 
 export default DoughnutChart;

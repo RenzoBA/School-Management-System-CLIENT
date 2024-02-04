@@ -25,6 +25,7 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 const BarsChart: FC<BarsChartProps> = ({ chartData }) => {
   const options: ChartOptions<"bar"> = {
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
       x: {
         display: true,
@@ -82,7 +83,11 @@ const BarsChart: FC<BarsChartProps> = ({ chartData }) => {
     ],
   };
 
-  return <Bar options={options} data={data} className="p-2" />;
+  return (
+    <div className="relative h-32 w-[450px]">
+      <Bar options={options} data={data} />
+    </div>
+  );
 };
 
 export default BarsChart;

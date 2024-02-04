@@ -36,6 +36,7 @@ ChartJS.register(
 const LineChart: FC<LineChartProps> = ({ chartData }) => {
   const options: ChartOptions<"line"> = {
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
       x: {
         display: false,
@@ -80,7 +81,11 @@ const LineChart: FC<LineChartProps> = ({ chartData }) => {
     ],
   };
 
-  return <Line options={options} data={data} />;
+  return (
+    <div className="relative h-28 w-60">
+      <Line options={options} data={data} />
+    </div>
+  );
 };
 
 export default LineChart;
