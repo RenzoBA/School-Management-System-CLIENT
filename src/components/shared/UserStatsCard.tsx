@@ -8,6 +8,7 @@ import {
 import LineChart from "./charts/LineChart";
 import { TrendingUp } from "lucide-react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 interface UserStatsCardProps {
   user: {
@@ -40,7 +41,15 @@ const UserStatsCard: FC<UserStatsCardProps> = ({ user }) => {
           <TooltipProvider delayDuration={100}>
             <Tooltip>
               <TooltipTrigger asChild className="z-10">
-                <span className="flex cursor-pointer flex-row items-center gap-1 text-xs font-semibold">
+                <span
+                  className={cn(
+                    "flex cursor-pointer flex-row items-center gap-1 text-xs font-semibold",
+                    {
+                      "text-[#FF6384]": user.percentage[0] === "-",
+                      "text-[#4BC0C0]": user.percentage[0] === "+",
+                    }
+                  )}
+                >
                   <TrendingUp size={14} />
                   {user.percentage} %
                 </span>
