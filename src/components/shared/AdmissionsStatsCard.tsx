@@ -10,9 +10,9 @@ const cohorts = {
   },
 };
 
-const CohortStatsCard: FC = () => {
+const AdmissionsStatsCard: FC = () => {
   return (
-    <div className="w-96 space-y-2 rounded-lg bg-background px-4 py-3 shadow">
+    <div className=" w-96 space-y-2 rounded-lg bg-background px-4 py-3 shadow">
       <div className="flex flex-row items-center justify-between">
         <p className="font-bold capitalize">Admissions Summary</p>
         <Link href="/admin/cohorts" className="text-xs text-tertiary">
@@ -29,4 +29,4 @@ const CohortStatsCard: FC = () => {
   );
 };
 
-export default CohortStatsCard;
+export default AdmissionsStatsCard;
