@@ -2,6 +2,7 @@ import CareerStatsCard from "@/components/shared/CareerStatsCard";
 import AdmissionsStatsCard from "@/components/shared/AdmissionsStatsCard";
 import TransactionStatsCard from "@/components/shared/TransactionStatsCard";
 import UserStatsCardsGroup from "@/components/shared/UserStatsCardsGroup";
+import { TaskManager } from "@/components/shared/task-manager/TaskManager";
 
 const page = () => {
   return (
@@ -12,10 +13,12 @@ const page = () => {
         <div className="flex flex-row gap-4">
           <AdmissionsStatsCard />
           <CareerStatsCard />
-        </div>
       </div>
-      <div className="w-64">taskmanager</div>
-    </div>
+        </div>
+      <TaskManager/>
+      </div>
+
+  
   );
 };
 

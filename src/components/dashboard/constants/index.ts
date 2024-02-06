@@ -12,6 +12,8 @@ import {
   Presentation,
   School,
   Users,
+  ListTodo
+
 } from "lucide-react";
 
 export const adminLinks: SidebarLinkProps[] = [
@@ -42,6 +44,11 @@ export const adminLinks: SidebarLinkProps[] = [
         icon: Group,
         title: "Sections",
         path: "/admin/sections",
+      },
+      {
+        icon: ListTodo,
+        title: "Tasks",
+        path: "/admin/tasks",
       },
     ],
   },
