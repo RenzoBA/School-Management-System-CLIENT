@@ -6,19 +6,17 @@ import { TaskManager } from "@/components/shared/task-manager/TaskManager";
 
 const page = () => {
   return (
-    <div className="flex h-full flex-row gap-4 pt-20">
-      <div className="flex flex-col justify-between gap-4">
+    <div className="flex h-full flex-row gap-10 pt-20">
+      <div className="item flex flex-col justify-between gap-4">
         <UserStatsCardsGroup />
         <TransactionStatsCard />
         <div className="flex flex-row gap-4">
           <AdmissionsStatsCard />
           <CareerStatsCard />
-      </div>
         </div>
-      <TaskManager/>
       </div>
-
-  
+      <TaskManager />
+    </div>
   );
 };
 

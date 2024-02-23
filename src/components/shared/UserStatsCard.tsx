@@ -28,14 +28,14 @@ interface UserStatsCardProps {
 
 const UserStatsCard: FC<UserStatsCardProps> = ({ user }) => {
   return (
-    <div className="rounded-lg bg-background px-4 py-3 shadow">
+    <div className="h-full rounded-lg bg-background px-4 py-3 shadow lg:w-52 xl:w-56">
       <div className="flex flex-row items-center justify-between">
         <p className="font-bold capitalize">{user.type}</p>
         <Link href={`/admin/${user.type}`} className="text-xs text-tertiary">
           More Details
         </Link>
       </div>
-      <div className="flex flex-col">
+      <div className="flex h-full flex-col">
         <div className="-mb-2 flex flex-col items-start justify-start">
           <p className="text-2xl font-black text-tertiary">{user.totalUsers}</p>
           <TooltipProvider delayDuration={100}>

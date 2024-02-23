@@ -51,7 +51,7 @@ const DoughnutChart: FC<DoughnutChartProps> = ({ chartData }) => {
   };
 
   return (
-    <div className="relative h-40 w-full">
+    <div className="relative flex h-40 items-center justify-center">
       <Doughnut options={options} data={data} />
     </div>
   );

@@ -84,7 +84,7 @@ const BarsChart: FC<BarsChartProps> = ({ chartData }) => {
   };
 
   return (
-    <div className="relative h-32 w-[450px]">
+    <div className="relative h-32 w-full">
       <Bar options={options} data={data} />
     </div>
   );

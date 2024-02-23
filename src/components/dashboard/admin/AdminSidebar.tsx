@@ -11,7 +11,7 @@ const AdminSidebar = () => {
   const pathName = usePathname();
 
   return (
-    <div className="w-60 space-y-8 rounded-lg bg-background px-2 py-6 shadow">
+    <div className="w-60 flex-none space-y-8 rounded-lg bg-background px-2 py-6 shadow">
       <div className="flex flex-row items-center justify-center gap-1">
         <Image src="/assets/logo.svg" alt="logo" width={40} height={40} />
         <h1 className="font-mono text-2xl font-black uppercase tracking-wider text-tertiary">

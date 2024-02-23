@@ -9,8 +9,10 @@ import {
   LineElement,
   Title,
   Legend,
+  ChartData,
+  ChartOptions,
+  Tooltip,
 } from "chart.js";
-import type { ChartData, ChartOptions } from "chart.js";
 import { Line } from "react-chartjs-2";
 
 interface LineChartProps {
@@ -26,6 +28,7 @@ interface LineChartProps {
 
 ChartJS.register(
   LinearScale,
+  Tooltip,
   CategoryScale,
   PointElement,
   LineElement,
@@ -77,13 +80,14 @@ const LineChart: FC<LineChartProps> = ({ chartData }) => {
         backgroundColor: chartData.colors.soft,
         tension: 0.4,
         pointRadius: 2,
+        fill: true,
       },
     ],
   };
 
   return (
-    <div className="relative h-28 w-60">
-      <Line options={options} data={data} />
+    <div className="relative h-20 w-full">
+      <Line options={options} data={data} width="100%" />
     </div>
   );
 };
