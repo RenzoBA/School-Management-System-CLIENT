@@ -17,24 +17,25 @@ const careers = {
 
 const CareerStatsCard: FC = () => {
   return (
-    <div className="space-y-2 rounded-lg bg-background px-4 py-3 shadow xl:w-80">
+    <div className="space-y-2 rounded-lg bg-background px-4 py-3 shadow lg:w-72 xl:w-80">
       <div className="flex flex-row items-center justify-between">
         <p className="font-bold capitalize">Careers Summary</p>
         <Link href="/admin/careers" className="text-xs text-tertiary">
           More Details
         </Link>
       </div>
-      <div className="flex flex-row">
+      <div className="flex flex-row gap-8">
         <DoughnutChart chartData={careers.chartData} />
-        <div className="w-32 space-y-2 text-center">
-          <p className="text-[0.7rem] text-[#9699A6]">Top 3:</p>
-          <div className="flex flex-col items-center justify-between">
+        <div className="w-fit space-y-2 text-center">
+          <div className="flex h-full flex-col items-start justify-between">
             {careers.topCareers.map((career, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center justify-center"
-              >
-                <p className="text-xs font-semibold">{career.careerName}</p>
+              <div key={i} className="flex flex-col items-start justify-center">
+                <p className="text-xs font-semibold">
+                  <span className="mr-1 rounded-full bg-primary px-1 py-0.5 text-[10px] font-bold text-primary-foreground shadow">
+                    {i + 1}
+                  </span>
+                  {career.careerName}
+                </p>
                 <span className="text-xl font-black text-tertiary">
                   {career.studentsNumber}
                 </span>

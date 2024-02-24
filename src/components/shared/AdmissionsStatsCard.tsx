@@ -12,7 +12,7 @@ const cohorts = {
 
 const AdmissionsStatsCard: FC = () => {
   return (
-    <div className="space-y-2 rounded-lg bg-background px-4 py-3 shadow xl:w-[368px]">
+    <div className="space-y-2 rounded-lg bg-background px-4 py-3 shadow lg:w-[352px] xl:w-[368px] 2xl:w-[416px]">
       <div className="flex flex-row items-center justify-between">
         <p className="font-bold capitalize">Admissions Summary</p>
         <Link href="/admin/cohorts" className="text-xs text-tertiary">
