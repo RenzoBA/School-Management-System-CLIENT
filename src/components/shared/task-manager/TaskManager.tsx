@@ -1,150 +1,69 @@
+"use client"
+import { getTasks, statusDataTransformer } from "@/services/Tasks/tasks.service";
+import { useQuery } from "@tanstack/react-query";
 import TaskChart from "./TaskChart"
 import TaskCard from "./TasksCard"
+import TaskSkeleton from "./task.skeleton";
+import Task from "./Task";
+import Link from "next/link";
+import { Dispatch, SetStateAction } from "react";
 
 
-const tasks = [
-    {
-      id: "task1",
-      title: "Task 1",
-      description: " task 1 descripxcvxcvchdthjyhtsdhjhulfhcvbjkgyufghvgfdhvhjhxvcxvcxvcxvcxvxcvxtion",
-      authorId: "author1",
-      assignedUserId: "user1",
-      status: "Pending",
-      dateCreated: "2024-02-03T12:00:00Z"
-    },
-    {
-      id: "task2",
-      title: "Task 2",
-      description: " task 2 description",
-      authorId: "author2",
-      assignedUserId: "user2",
-      status: "IN PROGRESS",
-      dateCreated: "2024-02-03T13:30:00Z"
-    },
-    {
-      id: "task3",
-      title: "Task 3",
-      description: " task 3 description",
-      authorId: "author3",
-      status: "COMPLETE",
-      dateCreated: "2024-02-03T15:45:00Z"
-    },
-    {
-      id: "task1",
-      title: "Task 1",
-      description: " task 1 description",
-      authorId: "author1",
-      assignedUserId: "user1",
-      status: "Pending",
-      dateCreated: "2024-02-03T12:00:00Z"
-    },
- 
-    {
-      id: "task1",
-      title: "Task 1",
-      description: " task 1 description",
-      authorId: "author1",
-      assignedUserId: "user1",
-      status: "Pending",
-      dateCreated: "2024-02-03T12:00:00Z"
-    },
-    {
-      id: "task1",
-      title: "Task 1",
-      description: " task 1 description",
-      authorId: "author1",
-      assignedUserId: "user1",
-      status: "Pending",
-      dateCreated: "2024-02-03T12:00:00Z"
-    },
-    {
-      id: "task1",
-      title: "Task 1",
-      description: " task 1 description",
-      authorId: "author1",
-      assignedUserId: "user1",
-      status: "Pending",
-      dateCreated: "2024-02-03T12:00:00Z"
-    },
-    {
-      id: "task1",
-      title: "Task 1",
-      description: " task 1 description",
-      authorId: "author1",
-      assignedUserId: "user1",
-      status: "Pending",
-      dateCreated: "2024-02-03T12:00:00Z"
-    },
-    {
-      id: "task1",
-      title: "Task 1",
-      description: " task 1 description",
-      authorId: "author1",
-      assignedUserId: "user1",
-      status: "Pending",
-      dateCreated: "2024-02-03T12:00:00Z"
-    },
-    {
-      id: "task1",
-      title: "Task 1",
-      description: " task 1 description",
-      authorId: "author1",
-      assignedUserId: "user1",
-      status: "Pending",
-      dateCreated: "2024-02-03T12:00:00Z"
-    },
-    {
-      id: "task1",
-      title: "Task 1",
-      description: " task 1 description",
-      authorId: "author1",
-      assignedUserId: "user1",
-      status: "Pending",
-      dateCreated: "2024-02-03T12:00:00Z"
-    },
-    {
-      id: "task1",
-      title: "Task 1",
-      description: " task 1 description",
-      authorId: "author1",
-      assignedUserId: "user1",
-      status: "Pending",
-      dateCreated: "2024-02-03T12:00:00Z"
-    },
-    {
-      id: "task1",
-      title: "Task 1",
-      description: " task 1 description",
-      authorId: "author1",
-      assignedUserId: "user1",
-      status: "Pending",
-      dateCreated: "2024-02-03T12:00:00Z"
-    },
-    {
-      id: "task2",
-      title: "Task 2",
-      description: " task 2 description",
-      authorId: "author2",
-      assignedUserId: "user2",
-      status: "IN PROGRESS",
-      dateCreated: "2024-02-03T13:30:00Z"
-    },
-    {
-      id: "task3",
-      title: "Task 3",
-      description: " task 3 description",
-      authorId: "author3",
-      status: "COMPLETE",
-      dateCreated: "2024-02-03T15:45:00Z"
-    },
-    // Add more tasks as needed
-  ];
-  
-export const TaskManager: React.FC = () => {
-    return <div className="w-[23%] flex flex-col gap-y-5">
-        <TaskChart />
-        <TaskCard
-        tasks={tasks}
-        />
-    </div>
+
+export const TaskManager: React.FC<{
+  handleView: Dispatch<SetStateAction<{
+    show: boolean;
+    title: string;
+    userId: string;
+    authorId: string;
+    description: string;
+    status: "Pending" | "In Progress" | "Completed";
+  }>>
+}> = ({ handleView}) => {
+  const { data, isLoading } = useQuery({
+    queryKey: ['tasks'],
+    queryFn: () => getTasks('1', 100, 'SUPER-ADMIN-001'),
+  });
+  const tasks = data?.tasks ?? [];
+  return <div className="w-72 h-full flex flex-col gap-y-2 ">
+    <TaskChart />
+    <article className="flex flex-col flex-1 space-y-3 rounded-lg px-2 py-3 shadow overflow-y-auto antialiased scrollbar-w-[2px] scrollbar-thin scrollbar-thumb-background-strong scrollbar-thumb-rounded ">
+      <div className="flex flex-row items-center justify-between">
+        <p className="font-bold capitalize">Pending Tasks</p>
+        <Link href="/admin/careers" className="text-xs text-tertiary">
+          More Details
+        </Link>
+      </div>
+      <div className="flex flex-col  gap-y-3 overflow-hidden hover:overflow-y-auto antialiased scrollbar-w-[2px] scrollbar-thin scrollbar-thumb-background-strong scrollbar-thumb-rounded ">
+        {
+          isLoading
+            ? <>
+              <TaskSkeleton />
+              <TaskSkeleton />
+              <TaskSkeleton />
+              <TaskSkeleton />
+              <TaskSkeleton />
+              <TaskSkeleton />
+              <TaskSkeleton />
+            </>
+
+            :
+            (tasks?.map((task, i) => {
+              // console.log(task)
+              if (i < 3 && task.status === 'PENDING')
+                return <Task
+                  key={task.id}
+                  author={task.authorId}
+                  description={task.description}
+                  id={task.id}
+                  status={statusDataTransformer(task.status)}
+                  title={task.title}
+                  handleView={handleView}
+                />
+            }
+            ))
+        }
+      </div>
+    </article>
+  </div>
 }

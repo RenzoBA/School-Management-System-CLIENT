@@ -97,7 +97,9 @@
     scrollbar-width: none;
     /* Firefox */
   }
-
+ .dragover{
+  opacity: 0.5;
+ }
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }

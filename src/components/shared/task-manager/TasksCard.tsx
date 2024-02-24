@@ -6,14 +6,14 @@ const TaskCard: FC<{ tasks: TaskItemProp[] }> = ({ tasks }) => {
 
 
     return (
-        <article className="flex flex-col space-y-3 rounded-lg bg-background px-4 py-3 shadow">
+        <article className="flex flex-col flex-1 space-y-3 rounded-lg bg-background px-4 py-3 shadow">
             <div className="flex flex-row items-center justify-between">
                 <p className="font-bold capitalize">Pending Tasks</p>
                 <Link href="/admin/careers" className="text-xs text-tertiary">
                     More Details
                 </Link>
             </div>
-            <div className="flex flex-col h-80 gap-y-3 text-sm">
+            <div className="flex flex-col gap-y-3 text-sm">
                 {
                     tasks.map((task,i) => {
                         if (task.status == "Pending" && i  < 6) {

@@ -7,7 +7,7 @@ export type TaskItemProp = {
     description: string;
     authorId: string
     assignedUserId?: string;
-    status: string;
+    status: ("Pending" | "In Progress" | "Completed");
     dateCreated: string;
 }
 
@@ -18,6 +18,7 @@ const TaskItem: FC<TaskItemProp> = ({ id, title, description, status, authorId, 
             <div className="ml-auto text-sm">
                 <TaskStatus
                 status={status}
+                id={id}
                 />
             </div>
         </div>
