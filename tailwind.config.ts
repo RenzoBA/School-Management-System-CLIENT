@@ -16,6 +16,13 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1400px",
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -26,12 +33,10 @@ module.exports = {
           strong: "hsl(var(--background-strong))",
         },
         backgroundPrimaryGradient: {
-          DEFAULT: 'hsl(--backgroundPrimaryGradient)',
-       
+          DEFAULT: "hsl(--backgroundPrimaryGradient)",
         },
         backgroundSecondaryGradient: {
-          DEFAULT: 'hsl(--backgroundSecondaryGradient)',
-       
+          DEFAULT: "hsl(--backgroundSecondaryGradient)",
         },
         foreground: "hsl(var(--foreground))",
         tertiary: {
@@ -41,7 +46,7 @@ module.exports = {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-        }, 
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
